@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>倒计时效果</title>
+		<script type="text/javascript" src="startTime.js"></script>
+		<script>
+			window.onload = function(){
+				var oTxt = document.getElementById('txt');
+				var oBtn = document.getElementById('btn');
+				var oDistanceTime = document.getElementById('distanceTime');
+				var oDate = document.getElementById('date');
+				oBtn.onclick = function(){
+					new remainTime({
+						strTime : oTxt.value,
+						distanceTime : oDistanceTime,
+						date : oDate
+					})
+				}
+			}
+		</script>
+	</head>
+	<body>
+		请输入年月日：<input type="text" id="txt" />
+		<input type="button" value="确定" id="btn" />
+		<div style="width:600px;height:300px;margin:100px auto;">
+			<div id="distanceTime">
+				现在距离xx年xx月xx日还剩：
+			</div>
+			<div id="date">
+				00天00小时00分钟00秒
+			</div>
+		</div>
+	</body>
+</html>
